@@ -88,8 +88,8 @@ def get_average_age_for_season(data, season)
   count = 0
 	avg_age = 0
 	sum = 0
-	data.each do |season_num,value|
-	  if season == season_num.to_s
+	data.each do |season_str,value|
+	  if season == season_str
 		  # puts "#{season_num}: #{value}"
 		 	value.each do |key|  #value is array
 			#  puts "#{key}"
