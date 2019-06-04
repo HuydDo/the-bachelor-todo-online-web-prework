@@ -16,30 +16,31 @@ def get_first_name_of_season_winner(data, season)
 						# puts "#{fname[0]}"
 						# binding.pry
 					end
-				end
-	  	end
+	  		end
+			end
 		end
 	end
 	fname[0]
 end
 
 def get_contestant_name(data, occupation)
-	c_name = ""
+	c_name = " "
 	data.each do |season_num,value|
 			# puts "#{value}"
-			value.each do |key| #value is array
-				# puts "#{key}"
-				key.each do |k,v| #key is hash
-					# puts "#{k} #{v}"
-					if v == occupation.to_s
-						puts "#{v}"
-						# puts "#{key[:name]}"
-						c_name = key["name"]
-						# binding.pry
-					end
+		value.each do |key| #value is array
+			# puts "#{key}"
+			key.each do |k,v| #key is hash
+				# puts "#{k} #{v}"
+				if v == occupation.to_s
+					puts "#{v}"
+					# puts "#{key[:name]}"
+					c_name = key["name"]
+					# fname[0]
+					# binding.pry
 				end
 			end
 		end
+	end
 	c_name
 end
 
@@ -68,16 +69,16 @@ def get_occupation(data, hometown)
 	job = []
 	data.each do |season_num,value|
 			# puts "#{value}"
-			value.each do |key| #value is array
-				# puts "#{key}"
-				key.each do |k,v| #key is hash
-					# puts "#{k} #{v}"
-					if v == hometown
-							# job << key[:occupation]
-              job << key["occupation"]
-					end
+		value.each do |key| #value is array
+			# puts "#{key}"
+			key.each do |k,v| #key is hash
+				# puts "#{k} #{v}"
+				if v == hometown
+						# job << key[:occupation]
+            job << key["occupation"]
 				end
 			end
+		end
 	end
 	job[0]
 end
@@ -96,7 +97,7 @@ def get_average_age_for_season(data, season)
 					# puts "#{k}: #{v}"
 					# if k == :age
           if k == :age
-            binding.pry
+            # binding.pry
 						sum += v.to_f
 						count += 1
 						avg_age = sum/count
