@@ -97,7 +97,7 @@ def get_average_age_for_season(data, season)
 					# puts "#{k}: #{v}"
 					# if k == :age
           if k == :age
-            # binding.pry
+            binding.pry
 						sum += v.to_f
 						count += 1
 						avg_age = sum/count
