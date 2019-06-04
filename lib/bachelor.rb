@@ -88,25 +88,9 @@ def get_average_age_for_season(data, season)
   count = 0
 	avg_age = 0
 	sum = 0
-	data.each do |season_str,value|
-	  if season == season_str
-		  # puts "#{season_num}: #{value}"
-		 	value.each do |key|  #value is array
-			#  puts "#{key}"
-				key.each do |k,v|  #key is hash
-					# puts "#{k}: #{v}"
-					# if k == :age
-          if k == :age
-            # binding.pry
-						sum += v.to_f
-						count += 1
-						avg_age = sum/count
-						puts "age: #{v.to_i} sum: #{sum} avg_age: #{(sum/count)}"
-						# puts "#{key[:age]}"
-					end
-				end
-	  	end
-		end
-	end
-	avg_age
+	data[season].each do |person|
+		sum += person["age"].to_i
+		count += 1
+	end	
+	ave_age = sum/count	
 end
